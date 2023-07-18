@@ -5,15 +5,19 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
-    background: black;
-    color: white;
+    background: #white;
+    color: #51361a;
 }
 
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(images/edit2.png);
+    background-image: url(images/edit3.png);
     background-size: cover;
     background-position: center;
 }
@@ -30,7 +34,7 @@ nav{
 }
 
 .logo{
-    width: 75px;
+    width: 100px;
 }
 
 nav ul li{
@@ -40,7 +44,7 @@ nav ul li{
 }
 
 nav ul li a{
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -50,7 +54,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #006400;
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -74,13 +78,13 @@ nav ul li a:hover::after{
 }
 
 .header-text h1 span{
-    color: #ff004f;
+    color: #006400;
 }
 
 /* -----About Section----- */
 #about{
     padding: 80px 0;
-    color: #ababab;
+    color: #51361a;
 }
 
 .row{
@@ -105,7 +109,7 @@ nav ul li a:hover::after{
 .sub-title{
     font-size: 60px;
     font-weight: 600;
-    color: white;
+    color: #006400;
 }
 
 .tab-titles{
@@ -125,7 +129,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #006400;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -142,8 +146,8 @@ nav ul li a:hover::after{
 }
 
 .tab-contents ul li span{
-    color: #b54769;
-    font-size: 14px;
+    color: #006400;
+    font-size: px;
 }
 
 .tab-contents{
@@ -182,7 +186,7 @@ nav ul li a:hover::after{
 .layer{
     width: 100%;
     height: 0;
-    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    background: linear-gradient(rgba(0,0,0,0.6), white);
     border-radius: 10px;
     position: absolute;
     left: 0;
@@ -205,7 +209,7 @@ nav ul li a:hover::after{
 
 .layer a{
     margin-top: 20px;
-    color: #ff004f;
+    color: #006400;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
@@ -238,7 +242,7 @@ nav ul li a:hover::after{
 }
 
 .contact-left p i{
-    color: #ff004f;
+    color: #006400;
     margin-right: 15px;
     font-size: 25px;
 }
@@ -257,19 +261,114 @@ nav ul li a:hover::after{
 }
 
 .social-icons a:hover{
-    color: #ff004f;
+    color: #006400;
     transform: translateY(-5px);
 }
 
 .btn{
-    /* display: block; */
+    display: block;
     margin: 50px auto;
     width: fit-content;
-    border: 1px solid #ff004f;
+    border: 1px solid #006400;
     padding: 14px 50px;
     border-radius: 6px;
     text-decoration: none;
-    color: #fff;    
+    color: #fff; 
+}
+
+.btn.btn2{
     display: inline-block;
-    background: #ff004f;
+    background: #006400;
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #d3d3d3;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+/* -----CSS for Small Screens----- */
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(images/background-small\ screens.jpeg);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+        color: white;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background:#ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -30px;
+    display: block;
 }

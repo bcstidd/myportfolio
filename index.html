@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>Augustine Sung's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/51cc0fbb18.js" crossorigin="anonymous"></script>
 </head>
@@ -11,16 +11,18 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/300Logo.png" class="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                <img src="images/Screenshot 2023-07-17 at 9.59.09 PM.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-solid fa-xmark" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fas fa-solid fa-bars" onclick="openMenu()"></i>
             </nav>
             <div class="header-text">
-                <h1>Hi, I'm <span>Augustine</span><br>Sung, a Software Developer</h1>
+                <h1>Hi, I'm <span>Augustine</span> Sung,<br> a Software Engineer.</h1>
             </div>
         </div>
     </div>
@@ -34,7 +36,10 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Coming from a mixed background of Finance, Operations and Customer Service, I never felt too passionate about the work I was doing. I've always been passionate about technology and finally decided to make the jump, graduating from General Assembly's Software Engineering Bootcamp in March 2023. Despite the challenges, I confirmed my desire to enter the tech space and left hungrier to continue learning!
+                        <br><br>
+                        With a growth-driven mindset, I'm determined to add value to any team I have the opportunity to work with. 
+                    </p>
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
                         <p class="tab-links" onclick="openTab('experience')">Experience</p>
@@ -42,15 +47,19 @@
                     </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
-                        <li><span>Web Development</span><br>Web app Development</li>
-                        <li><span>App Development</span><br>Building Android/Ios apps</li>
+                        <li><span><strong>Languages</strong></span><br>Python3, JavaScript, HTML, CSS, React, TypeScript</li>
+                        <li><span><strong>Frameworks and Libraries</strong></span><br>Node.js, React Native, jQuery, Mongoose, Django</li>
+                        <li><span><strong>Databases</strong></span><br>MongoDB, PostgreSQL, SQL</li>
+                        <li><span><strong>Tools/Other</strong></span><br>Git, GitHub, RESTful APIs, MERN stack applications, Heroku</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>2021-Current</span><br>UI/UX Design Training at ET Institute</li>
-                        <li><span>2019-2021</span><br>Team Lead at StarApp LLC</li>
+                        <li><span><strong>May 2023 - Present</strong></span><br>Sprint Participant - Software Engineer at The Opportunity Project</li>
+                        <li><span><strong>December 2022 - March 2023</strong></span><br>Software Engineering Immersive Fellow at General Assembly</li>
+                        <li><span><strong>February 2020 - May 2022</strong></span><br>Executive Recruiter at CyberCoders</li>
+                        <li><span><strong>August 2018 - February 2020</strong></span><br>Accounting Analyst at Evolve Media LLC</li>
+                        <li><span><strong>June 2016 - May 2018</strong></span><br>Funding Manager at Currency Capital LLC</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
@@ -72,24 +81,24 @@
                 <div class="work">
                     <img src="images/qwiz.me.png">
                     <div class="layer">
-                        <h1>Social Media App</h3>
-                        <p>The app connects you to the talented people around the world.</p>
+                        <h2>Qwiz.me</h2>
+                        <p>Self-study app where users can create their own flashcard sets to quiz themselves!</p>
                         <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/BarterPortal.jpeg">
                     <div class="layer">
-                        <h2>Social Media App</h3>
-                        <p>The app connects you to the talented people around the world.</p>
+                        <h2>This for That</h2>
+                        <p>Community-driven barter portal, where users can trade goods with other users on the platform - no money exchanged.</p>
                         <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="work">
                     <img src="images/myPicks.png">
                     <div class="layer">
-                        <h3>Social Media App</h3>
-                        <p>The app connects you to the talented people around the world.</p>
+                        <h2>my.Picks</h2>
+                        <p>Aggregator of team/player/match stats for the NFL & NBA - where users can come to compare and discuss their sports picks with the community!</p>
                         <a href="#"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -104,20 +113,21 @@
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
                 <p><i class="fa-solid fa-envelope"></i>aysung8191@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i>(818)304-3391</p>
+                <p><i class="fa-solid fa-phone"></i>(818) 304-3391</p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/augustine-sung/"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://github.com/aysung8191"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <a href="" class="btn">Download Resume</a>
+                <a href="images/Augustine Sung - Resume 05:23.pdf" download class="btn btn2">Download Resume</a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="text" name="email" placeholder="Your Email" required>
+                    <input type="text" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea> 
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
     </div>
@@ -139,5 +149,34 @@
     }
 </script>
 
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openMenu(){
+        sidemenu.style.right = "0";
+    }
+
+    function closeMenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwvE5bj6k-CUwnwdm60c36aq3TBiM2LG-cP75n0JEXuRavS0092i1mjDofOYYM3VSyY0g/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
 </body>
 </html>
