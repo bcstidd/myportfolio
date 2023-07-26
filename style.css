@@ -98,16 +98,16 @@ nav ul li a:hover::after{
 }
 
 .about-col-1 img{
-    width: 100%;
+    width: 83%;
     border-radius: 15px;
 }
 
 .about-col-2{
-    flex-basis: 60%;
+    flex-basis: 65%;
 }
 
 .sub-title{
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 600;
     color: #006400;
 }
