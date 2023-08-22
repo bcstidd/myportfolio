@@ -132,18 +132,18 @@
                 <a href="assets/B.Stidd Resume.pdf" download class="btn btn2">Download Resume</a>
             </div>
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="text" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea> 
-                    <button type="submit" class="btn btn2">Submit</button>
+                <form id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <label>Name</label>
+                    <input type="text" name="user_name">
+                    <label>Email</label>
+                    <input type="email" name="user_email">
+                    <label>Message</label>
+                    <textarea name="message" rows="6"></textarea>
+                    <input type="submit" class="btn btn2" value="Send">
                 </form>
-                <span id="msg"></span>
+                <p id="success-message" class="hidden">Email sent successfully!</p>
             </div>
-        </div>
-    </div>
-</div>
-
 
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
@@ -171,23 +171,39 @@
         sidemenu.style.right = "-200px";
     }
 </script>
+<script src="index.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwvE5bj6k-CUwnwdm60c36aq3TBiM2LG-cP75n0JEXuRavS0092i1mjDofOYYM3VSyY0g/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
+    (function() {
+        emailjs.init('4UjUxYF6ZKUWzNteT'); // Replace with your EmailJS user ID
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            this.contact_number.value = Math.random() * 100000 | 0;
 
-    form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                }, 5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-    })
+            const data = {
+                user_name: this.user_name.value,
+                user_email: this.user_email.value,
+                message: this.message.value
+            };
+
+            sendEmailUsingEmailJS(data);
+
+            this.reset();
+        });
+
+        function sendEmailUsingEmailJS(data) {
+            emailjs.send("service_qk5p6fl", "template_82own6p", data) // Replace with your service and template IDs
+                .then((response) => {
+                    console.log('Email sent:', response);
+                    const successMessage = document.getElementById('success-message');
+                    successMessage.textContent = 'Email sent successfully!';
+                    successMessage.classList.remove('hidden');
+                })
+                .catch((error) => {
+                    console.error('Error sending email:', error);
+                });
+        }
+    })();
 </script>
 </body>
 </html>
