@@ -41,6 +41,7 @@ nav{
 img {
     height: 450px;
     width: 500px;
+    border-radius: 40px;
 }
 
 
@@ -86,14 +87,14 @@ nav ul li a:hover::after{
 }
 
 .header-text h1 span{
-    color: #006400;
+    color: #F28F3B;
 }
 
 /* -----About Section----- */
 #about{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     
 }
 
@@ -114,12 +115,25 @@ nav ul li a:hover::after{
    ;
 }
 
+/* Adjust for smaller screens */
+@media only screen and (max-width: 600px) {
+    .about-col-2 {
+      font-size: 14px; 
+      text-align: center; 
+      flex-basis: 100%; 
+      margin: 20px 0; 
+    }
+    
+    .about-col-2 > p {
+      margin: 10px 15px; /* Adjust margins for the paragraphs */
+    }
+  }
+
 .sub-title{
     margin-left: 5px;
     padding-top: 55px;
     font-size: 45px;
     font-weight: 600;
-    color: #4b6b63;
 }
 
 .tab-titles{
@@ -130,7 +144,7 @@ nav ul li a:hover::after{
 .tab-links{
     margin-right: 50px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
     cursor: pointer;
     position: relative;
 }
@@ -139,7 +153,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #020122;
+    background: #fff;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -147,7 +161,7 @@ nav ul li a:hover::after{
 }
 
 .tab-links.active-link::after{
-    width: 75%;
+    width: 100%;
 }
 
 .tab-contents ul li{
@@ -156,8 +170,8 @@ nav ul li a:hover::after{
 }
 
 .tab-contents ul li span{
-    color: #84A59D;
-    font-size: px;
+    color: #F28F3B;
+    font-size: 20px;
 }
 
 .tab-contents{
@@ -235,11 +249,11 @@ nav ul li a:hover::after{
 
 .layer a{
     margin-top: 20px;
-    color: #006400;
+    color: #294C60;
     text-decoration: none;
     font-size: 18px;
     line-height: 60px;
-    background: #fff;
+    background: #F28F3B;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -274,7 +288,8 @@ nav ul li a:hover::after{
 
 .contact-left p i{
     color: #294C60;
-    margin-right: 15px;
+    margin: 5px;
+    padding: 8px;
     font-size: 25px;
 }
 
@@ -341,8 +356,6 @@ nav .fas{
 }
 
 @media only screen and (max-width: 600px){
-    #header{
-    }
     .header-text{
         margin-top: 100%;
         font-size: 16px;
@@ -356,7 +369,7 @@ nav .fas{
         font-size: 25px;
     }
     nav ul{
-        background:#ff004f;
+        background:#F28F3B;
         position: fixed;
         top: 0;
         right: -200px;
@@ -405,6 +418,7 @@ nav .fas{
 
 .about-text{
     font-size: 22px;
+    margin: auto;
 }
 
 /* palette = 

@@ -6,6 +6,8 @@
     <title>Brittany Stidd's Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/51cc0fbb18.js" crossorigin="anonymous"></script>
+    <script src="index.js" type="application/javascript"></script>
+
 </head>
 <body>
     <div id="header">
@@ -50,15 +52,15 @@
                     </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span><strong>Languages</strong></span><br>Python3, JavaScript, HTML, CSS, React, TypeScript</li>
-                        <li><span><strong>Frameworks and Libraries</strong></span><br>Node.js, jQuery, Mongoose, Django</li>
+                        <li><span><strong>Languages</strong></span><br>Python3, JavaScript, HTML, CSS, React Native, ReactJS, TypeScript</li>
+                        <li><span><strong>Frameworks and Libraries</strong></span><br>Node.js, jQuery, Mongoose, Django, Supabase</li>
                         <li><span><strong>Databases</strong></span><br>MongoDB, PostgreSQL, SQL</li>
                         <li><span><strong>Tools/Other</strong></span><br>Git, GitHub, RESTful APIs, MERN stack applications, Heroku, OAuth</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                
+                        <li><span><strong>8/15/23 - 8/17/23</strong></span><br>Financial Literacy Hackathon</li>
                         <li><span><strong>December 2022 - March 2023</strong></span><br>Software Engineering Immersive Fellow at General Assembly</li>
                         <li><span><strong>June 2016 - Oct 2022</strong></span><br>Senior Surgical Assistant at Beacon Oral and Maxillofacial Surgeons</li>
                         <li><span><strong>March 2011 - June 2016</strong></span><br>Dental Assistant at Timm Family Dentistry and Gentle Dental</li>
@@ -79,13 +81,13 @@
 <!-- -----Portfolio Section----- -->
     <div id="portfolio">
         <div class="container">
-            <h1 class="sub-title">My Work</h1>
+            <h1 class="sub-title">Some of My Work</h1>
             <div class="work-list">
                 <div class="work">
                     <img src="assets/rise.jpg">
                     <div class="layer">
                         <h2>Rise</h2>
-                        <p>Elevate your financial prowess with Rise - merging credit insights and contemporary financial wisdom for a brighter financial journey.</p>
+                        <p>Elevate your financial prowess with the mobile app, Rise - merging credit insights and contemporary financial wisdom for a brighter financial journey.</p>
                         <a href="https://github.com/Personal-Finance-Credit-Score/creditapp/blob/main/README.md" target="_blank"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -134,17 +136,13 @@
             <div class="contact-right">
                 <form id="contact-form">
                     <input type="hidden" name="contact_number">
-                    <label>Name</label>
-                    <input type="text" name="user_name">
-                    <label>Email</label>
-                    <input type="email" name="user_email">
-                    <label>Message</label>
-                    <textarea name="message" rows="6"></textarea>
+                    <input type="text" placeholder="Name" name="from_name">
+                    <input type="email" placeholder="Email" name="user_email">
+                    <textarea name="message" placeholder="Message" rows="6"></textarea>
                     <input type="submit" class="btn btn2" value="Send">
                 </form>
-                <p id="success-message" class="hidden">Email sent successfully!</p>
-            </div>
-
+                <div>
+                </div>
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
@@ -171,39 +169,42 @@
         sidemenu.style.right = "-200px";
     }
 </script>
-<script src="index.js"></script>
+<script src="index.js" type="application/javascript"></script>
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     (function() {
-        emailjs.init('4UjUxYF6ZKUWzNteT'); // Replace with your EmailJS user ID
+        emailjs.init('4UjUxYF6ZKUWzNteT'); 
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            this.contact_number.value = Math.random() * 100000 | 0;
+        event.preventDefault();
+        this.contact_number.value = Math.random() * 100000 | 0;
 
-            const data = {
-                user_name: this.user_name.value,
-                user_email: this.user_email.value,
-                message: this.message.value
-            };
+        const formData = new FormData(this); // Collect form data
+        const data = {
+            user_name: formData.get("user_name"),
+            user_email: formData.get("user_email"),
+            message: formData.get("message")
+        };
 
-            sendEmailUsingEmailJS(data);
+        // Send email using EmailJS
+        sendEmailUsingEmailJS(data);
 
-            this.reset();
-        });
+        // Clear the form after sending
+        this.reset();
+    });
 
-        function sendEmailUsingEmailJS(data) {
-            emailjs.send("service_qk5p6fl", "template_82own6p", data) // Replace with your service and template IDs
-                .then((response) => {
-                    console.log('Email sent:', response);
-                    const successMessage = document.getElementById('success-message');
-                    successMessage.textContent = 'Email sent successfully!';
-                    successMessage.classList.remove('hidden');
-                })
-                .catch((error) => {
-                    console.error('Error sending email:', error);
-                });
-        }
-    })();
+    function sendEmailUsingEmailJS(data) {
+        emailjs.send("service_qk5p6fl", "template_82own6p", data) // Replace with your service and template IDs
+            .then((response) => {
+                console.log('Email sent:', response);
+                const successMessage = document.getElementById('success-message');
+                successMessage.textContent = 'Email sent successfully!';
+                successMessage.classList.remove('hidden');
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
+    }
+})();
 </script>
 </body>
 </html>
