@@ -25,9 +25,8 @@ body{
 } */
 
 .container{
-    margin: 0 30px;
-    padding: 10px;
-    margin-left: 10px;
+    margin: -50px 30px 0px 40px;
+    padding: 40px;
     /* background-color: #F3B61F; */
 }
 
@@ -119,7 +118,7 @@ nav ul li a:hover::after{
 }
 
 /* Adjust for smaller screens */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 620px) {
     .about-col-2 {
       font-size: 14px; 
       text-align: center; 
@@ -134,7 +133,7 @@ nav ul li a:hover::after{
 
 .sub-title{
     margin-left: 5px;
-    padding-top: 55px;
+    /* padding-top: 55px; */
     font-size: 45px;
     font-weight: 600;
 }
@@ -360,7 +359,7 @@ nav .fas{
 
 @media only screen and (max-width: 600px){
     .header-text{
-        margin-top: 100%;
+        margin-top: 20%;
         font-size: 16px;
         color: white;
     }
@@ -398,11 +397,11 @@ nav .fas{
     .about-col-1, .about-col-2{
         flex-basis: 100%;
     }
-    .about-col-1{
+    /* .about-col-1{
         margin-bottom: 30px;
-    }
+    } */
     .about-col-2{
-        font-size: 14px;
+        font-size: 16px;
     }
     .tab-links{
         font-size: 16px;
@@ -452,7 +451,7 @@ nav .fas{
   } */
   #about {
     display: flex;
-    flex-direction: column;
+    
     flex-wrap: wrap; 
     justify-content: center;
 }
@@ -461,9 +460,9 @@ nav .fas{
     text-align: center;
     padding: 0 10px;
     display: flex;
-    flex-direction: column; /* Add this line */
+    flex-direction: column; 
     align-items: center; /* Add this line */
-    gap: 22px; /* Add this line for vertical spacing */
+    gap: 2px; /* Add this line for vertical spacing */
 }
 
   
