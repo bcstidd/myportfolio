@@ -108,7 +108,12 @@
                     </div>
                 </div>
                 <div class="work"> 
-                       
+                    <img src="assets/war.jpg">
+                    <div class="layer">
+                        <h2>WAR</h2>
+                        <p>Journey back to your childhood with a classic card game War, revitalized for the digital age.</p>
+                        <a href="https://bcstidd.github.io/WAR/" target="_blank"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -129,7 +134,7 @@
                     <!-- <a href="https://www.hrc.org/campaigns/count-us-in"><i class="fa-brands fa-hrc"></i></a> -->
                     
                 </div>
-                <a href="assets/B. Stidd Resume.pdf" download class="btn btn2">Download Resume</a>
+                <a href="assets/Brittany Stidd Resume.docx.pdf" download class="btn btn2">Download Resume</a>
             </div>
               </div>
                 <script>
@@ -157,42 +162,6 @@
     function closeMenu(){
         sidemenu.style.right = "-200px";
     }
-</script>
-<script>
-    (function() {
-        emailjs.init('4UjUxYF6ZKUWzNteT'); 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            this.contact_number.value = Math.random() * 100000 | 0;
-            
-            const formData = new FormData(this); // Collect form data
-            const data = {
-                user_name: formData.get("user_name"),
-                user_email: formData.get("user_email"),
-                message: formData.get("message")
-            };
-            
-            // Send email using EmailJS
-            sendEmailUsingEmailJS(data);
-            
-            // Clear the form after sending
-            this.reset();
-        });
-        
-        function sendEmailUsingEmailJS(data) {
-            emailjs.send("service_qk5p6fl", "template_82own6p", data) // Replace with your service and template IDs
-            .then((response) => {
-                console.log('Email sent:', response);
-                const successMessage = document.getElementById('success-message');
-                successMessage.textContent = 'Email sent successfully!';
-                successMessage.classList.remove('hidden');
-            })
-            .catch((error) => {
-                console.error('Error sending email:', error);
-            });
-        }
-    })();
-    
 </script>
 <footer><small>&copy; Copyright, 2022 Brittany Stidd</small></footer>
 </body>
